@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+         <!-- Tambahkan Bootstrap JS dan dependensi Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+        <title>Sawala</title>
+  <style>
+    /* Atur lebar kolom saat mengecil */
+    .dropdown-content {
+      display: none;
+    }
+    .dropdown-toggle.active + .dropdown-content {
+      display: table-cell;
+    }
+
+    .card-table{
+      width: 1150px;
+      margin-bottom: 20px;
+      margin-left: 5px;
+    }
+
+   .card-read-image img {
+        width: 60%;
+        margin-left: 30px;
+      }
+  </style>
+    </head>
+<body class="bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img class="logo" src="/img/ulbi.png" alt="logo sawala"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="\admin/homepage"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\admin/diskusi"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\admin/info"><i class="fa-solid fa-bullhorn"></i></a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link active" href="\admin/read"><i class="fa-solid fa-user-pen"></i></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="\admin/chatbot"><i class="fa-solid fa-comment"></i></a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="/img/profile/avatar_(1).png" class="rounded-circle" alt="foto-profile"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\landingpage"><i class="fa-solid fa-right-from-bracket"></i></a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+ <main>
+  <section class="user-read">
+      <div class="card card-table mt-1">
+        <div class="card-header">
+          <h4 class="card-title">Welcome to Sawala</h4>
+        </div>
+        <div class="card-body">
+        <div class="row">
+          <div class="col-6 col-sm-6">
+          <h5 class="card-title">Kelola Data User</h5>
+              <p class="card-text">Mengelola data pengguna dengan hak akses yang berbeda antara admin dan mahasiswa</p>
+              <a href="create" class="button-create"><i class="fa-solid fa-plus"></i> Create</a>
+                <nav class="nav-pagination justify-content-end mt-2" aria-label="Page navigation example">
+                    <ul class="pagination pg-body-left">
+                      <li class="page-item"><a class="page-link" onclick="exportToPDF()" href="#">Export to PDF</a></li>
+                      <li class="page-item"><a class="page-link" onclick="exportToWord()" href="#">Export to Word</a></li>
+                      <li class="page-item"><a class="page-link" onclick="exportToExcel()" href="#">Export to Excel</a></li>
+                      <li class="page-item"><a class="page-link" onclick="exportToCSV()" href="#">Export to CSV</a></li>
+                    </ul>
+                  </nav>
+           </div>
+            <div class="col-6 col-sm-6">
+              <div class="card-read-image">
+                              <img src="/img/meeting.gif" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table table-bordered table-read" id="myTable">
+        <thead>
+          <tr>
+            <th>no</th>
+            <th>Email</th>
+            <th>Fullname</th>
+            <th>npm</th>
+            <th>Angkatan</th>
+            <th>Prodi</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Lainnya</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {{#each users}}
+            <tr>
+              <td>{{this.id}}</td>
+              <td>{{this.email}}</td>
+              <td>{{this.fullname}}</td>
+              <td>{{this.npm}}</td>
+              <td>{{this.tahun}}</td>
+              <td>{{this.prodi}}</td>
+              <td>{{this.username}}</td>
+              <td>{{this.password}}</td>
+              <td class="expand-collapse" onclick="toggleColumns()"><i class="fa-regular fa-square-plus"></i></td>
+                <tr class="collapsed-columns d-none">
+                   <th>Role</th>
+                   <th>KTM</th>
+                   <th>Validasi</th>
+                  <th>Action</th>
+                </tr>
+                <tr class="collapsed-columns d-none">
+                <td>{{this.role}}</td>
+                
+                <td id="kolom1"><img src={{this.ktm}} alt="Post Image" class="e-ktm"></td>
+                
+                <td id="kolom2">{{this.isVerified}}</td>
+                
+                <td>
+                <a href="/konfirmasi_user/{{this.id}}" class="button-konfirmasi" id="kolom4">Konfirmasi</a>
+                <a href="/sendEmail/{{this.id}}" class="button-send" id="kolom4">Send</a>
+                <a href="/update_user/{{this.id}}" class="button-edit"id="kolom5" >Update</a>
+                <a href="/delete_user/{{this.id}}" class="button-hapus" id="kolom6">Delete</a>  
+                </td>
+                </tr>
+              </tr>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+  </section>
+ </main>
+ 
+ <footer>
+      <div class="footer">
+        <p>Sawala.20223-v.0.0.1</p>
+      </div>
+</footer>
+  <!-- Tambahkan Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tableexport/5.2.0/tableexport.min.js"></script>
+
+
+  <!-- Script JavaScript -->
+  <script>
+    function toggleColumns(i) {
+      const rows = document.querySelectorAll('.collapsed-columns');
+      rows.forEach(row => {
+        row.classList.toggle('d-none');
+      });
+      document.querySelector('th.expand-collapse').classList.toggle('expanded');
+    }
+
+    function exportToPDF() {
+    TableExport(document.getElementById('myTable'), {
+      formats: ['PDF'],
+      fileName: 'table_export',
+    }).exportToPDF();
+  }
+
+  function exportToWord() {
+    TableExport(document.getElementById('myTable'), {
+      formats: ['DOC'],
+      fileName: 'table_export',
+    }).exportToDoc();
+  }
+
+  function exportToExcel() {
+    TableExport(document.getElementById('myTable'), {
+      formats: ['XLS'],
+      fileName: 'table_export',
+    }).exportToExcel();
+  }
+
+  function exportToCSV() {
+    TableExport(document.getElementById('myTable'), {
+      formats: ['CSV'],
+      fileName: 'table_export',
+    }).exportToCSV();
+  }
+  </script>
+</body>
+</html>

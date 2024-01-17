@@ -1,0 +1,690 @@
+*{
+  font-family: montserrat;
+}
+
+body{
+  background-color: #fffcfc;
+}
+
+/*sidebar*/
+        /* Style tambahan jika diperlukan */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 5px;
+        }
+
+        .navbar-toggler {
+            color: #fff;
+        }
+
+/* Styling for the hero section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Tinggi hero element, dapat disesuaikan */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%), url('/img/bg-homepage.jpg');
+  background-color: Black !important; /* Ganti 'nama-gambar.jpg' dengan path atau URL gambar Anda */
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Styling for hero content */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Warna teks */
+}
+
+.hero-text{
+  color: white;
+  text-shadow: 1px 1px #141414;
+  font-family: montserrat;
+}
+.hero-text h1{
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.hero-text p{
+  font-weight: 600;
+  font-size: 24px;
+}
+
+ /* Style untuk sidebar */
+ .sidebar-homepage {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+}
+
+/* Style untuk judul sidebar */
+.sidebar-homepage h2 {
+  text-align: center;
+}
+
+/* Style untuk daftar trending topics */
+.trending-topics {
+  list-style-type: none;
+  padding: 0;
+}
+
+.trending-topics li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style untuk ruang kosong (space) */
+.space {
+  height: 200px;
+}
+
+/* Style untuk konten utama */
+.main-content-homepage {
+  margin-left: 20px; /* Sesuaikan margin agar konten tidak tertutup oleh sidebar */
+  padding: 20px;
+}
+
+
+
+
+/* Styling for hero text */
+.hero-content h1 {
+  font-size: 3em; /* Ukuran font judul */
+  margin-bottom: 20px; /* Ruang antara judul dan paragraf */
+}
+
+.hero-content p {
+  font-size: 1.5em; /* Ukuran font paragraf */
+  margin-bottom: 40px; /* Ruang bawah paragraf */
+}
+
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+section {
+  padding-bottom: 100px;
+}
+
+.navbar {
+  background-color: white;
+  width: 100%;
+  height: 60px;
+}
+
+  .logo{
+    height: 44px;
+  }
+
+.navbar a i {
+  padding: 10px;
+}
+
+.navbar-item{
+  padding-left: 20px;
+}
+
+.nav-link img{
+  width: 44px;
+  height: 44px;
+  display: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+.navbar-brand{
+  padding-right: 50px;
+  margin: 10px;
+}
+
+.button_tambah{
+  margin: 0 auto;
+  margin-top: 30PX;
+  padding-left: 160px;
+}
+
+.beranda-section{
+  padding-left: 0px;
+}
+
+.card{
+  margin: 0 auto;
+  margin-top: 20PX;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 800px;
+  min-height: 200px;
+  position: relative;
+}
+
+.card-homepage{
+  margin: 0 auto;
+  margin-top: 50PX;
+  width: 800px;
+  min-height: 200px;
+  background-color: #fffcfc;
+}
+.info-image{
+  max-width: 200px;
+  min-height: 150px;
+}
+
+.card-header{
+  display: flex;
+  flex-wrap: column;
+  padding-right: 10px;
+  height: 60px;
+  font-size: 12px;
+}
+
+.card-title{
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.card-title h7{
+  font-weight: 900;
+}
+
+.card-title h5{
+  font-weight: 900;
+}
+
+.card-logo img{
+  width: 50px;
+  height: 50px;
+  display: row;
+  justify-content: center;
+  padding: 5px;
+}
+
+.card-comment{
+  display: flex;
+  flex-wrap: column;
+  padding-right: 10px;
+  height: 60px;
+  font-size: 12px;
+}
+
+
+.card-text{
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+#typewriter-text {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 1.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+
+/* Animasi mengetik */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.slice{
+  max-height: 250px;
+}
+
+.slice-text {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pg-body{
+  margin-top: 50PX;
+  width:  auto;
+  justify-content: center;
+}
+
+.blockquote-footer{
+  font-size: 12px;
+}
+
+.delete{
+  color: red;
+}
+
+.awal{
+  max-height: 5px;
+  border-radius: 20px;
+  padding-bottom: 50px;
+}
+.atas{
+  max-width: 350px;
+}
+
+.tabs-card{
+  max-width: 350px;
+}
+.active{
+  background-color: darkblue;
+}
+
+.user-read{
+  margin : 15px;
+  margin-left: 50px;
+  padding-bottom: 50px;
+}
+
+.table-read{
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.table-read th,td {
+  text-align: center;
+  padding: 4px 28px;
+  width: 5px;
+}
+
+.table-read th {
+  background-color: #1c0ac0;
+  color: white;
+}
+
+.button-create {
+  background-color: #1c0ac0;
+  width: 100px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button-send {
+  background-color: #14bfcb;
+  width: 100px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button-konfirmasi {
+  background-color: #efd630;
+  width: 100px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+
+.button-edit {
+  background-color: #4CAF50;
+  width: 100px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button-hapus {
+  background-color: #d10000;
+  width: 100px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.e-ktm{
+  width: 150px; 
+  height: auto; 
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.create-user img {
+  width: 90%;
+  margin: 0 auto;
+  padding-left: 20px;
+
+}
+
+/*--Create User--*/
+.create-section{
+  background-color: #fff;
+}
+.content-wrapper {
+  display: contents;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+  padding-left: 100px;
+}
+
+.content-wrapper img {
+  padding-top: 100px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 30px;
+
+}
+
+/*chatbot*/
+
+.chatbot {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('/img/wait-bg.jpeg');
+    background-color: #f5f5f5;
+}
+
+.chat-img img{
+  width: 30px;
+  height: 30px;
+  display: row;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+
+#chat-container {
+    margin-top: 10px;
+    width: 1000px; /* Sesuaikan dengan lebar yang diinginkan */
+    height: 550px; /* Sesuaikan dengan tinggi yang diinginkan */
+    border: 1px solid #ffffff;
+    background-color: rgb(56, 56, 67);
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+    display: none;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(78, 78, 78, 0.1);
+    position: relative; /* Tambahkan posisi relatif untuk menempatkan elemen header */
+}
+
+#chat-header {
+    background-color: #3d88cf;
+    color:rgb(56, 56, 67);
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#header-container {
+    background-color: #3d88cf;
+    color: rgb(56, 56, 67);
+    padding: 8px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0; /* Sesuaikan dengan jarak dari bagian atas yang diinginkan */
+    left: 0;
+    right: 0;
+    z-index: 1; /* Menempatkan header di atas elemen lainnya */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-top: 1px solid rgb(56, 56, 67);
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    background-color: rgb(56, 56, 67);
+    z-index: 2;
+}
+
+#user-message {
+    flex-grow: 1;
+    margin-right: 8px;
+    padding: 8px;
+    border: 1px solid #329eb1;
+    border-radius: 4px;
+    outline: none;
+}
+
+#send-button {
+    padding: 8px 12px;
+    background-color: #3d88cf;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #3d88cf;
+}
+
+#chat-messages {
+    padding: 20px;
+    overflow-y: scroll;
+    max-height: calc(100% - 120px);
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: left;
+    width: 100%;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    max-width: 70%;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #d8d8d8;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: #3d88cf;
+    color: #fff;
+    text-align: left;
+}
+
+.message-container.user {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.message-container.bot {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.message-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-top: 1px solid #e6e6e6;
+    background-color: rgb(56, 56, 67);
+    z-index: 2;
+    width: 600px;
+    margin-right: 12px;
+}
+
+.user-message-input {
+    flex-grow: 1;
+    margin-right: 4px;
+    padding: 8px;
+    border: 1px solid #c9e1e6;
+    border-radius: 4px;
+    outline: none;
+}
+
+.send-button {
+    padding: 9px 16px;
+    background-color: #3d88cf;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #3d88cf;
+}
+
+#header-container img {
+    width: 30px; /* Sesuaikan dengan lebar yang diinginkan */
+    height: 30px; /* Sesuaikan dengan tinggi yang diinginkan */
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    margin-right: 10px;
+}
+
+#toggle-chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #3d88cf;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#toggle-chat-button:hover {
+    background-color: #3d88cf;
+}
+/*footer*/
+
+.footer{
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  text-align: center; 
+  font-weight: bold;
+  position: fixed;
+}
+
+.pagination ul li{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+        /* Style tambahan jika diperlukan */
+        .list-group {
+          margin-top: 20px;
+      }
+      .trending-topics{
+         margin-top: 50PX;
+          margin-left: 80px;
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .trending-topics{
+         position: relative;
+      }
+       /* Style tambahan jika diperlukan */
+      .month {
+          margin-bottom: 20px;
+      }
+
+      .month h3 {
+          margin-bottom: 10px;
+          text-align: center;
+      }
+
+      .table-bordered th,
+      .table-bordered td {
+          border: 1px solid #dee2e6;
+      }
+
+      .table-bordered th {
+          background-color: #f8f9fa;
+      }
+      .form-control {
+        margin-right: 2px;
+      }
+
+      .btn {
+        margin-left: 2px;
+      }

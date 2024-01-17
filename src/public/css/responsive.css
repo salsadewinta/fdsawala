@@ -1,0 +1,24 @@
+@media screen and (min-width: 2000px) {
+    .carousel {
+        min-height: 380px;
+        min-width: 80%;
+    }
+  }
+
+@media screen and (min-width: 600px) {
+    .carousel {
+      width: auto;
+    }
+  }
+
+  /* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+  .sidebar-homepage {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .main-content-homepage {
+    margin-left: 0;
+  }
+}

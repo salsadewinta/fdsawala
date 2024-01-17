@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>Sawala</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#"> <img class="logo" src="img/ulbi.png" alt="ulbixsawala"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="landingpage">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    My Account
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Register</a></li>
+                    <li><a class="dropdown-item" href="login">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <main>
+      <section class="form-section">
+        <div class="container">
+            <div class="row">
+              <div class="content-wrapper">
+                <div class="col-6">
+                  <img src="img/register.png" alt="">
+                </div>
+              </div>
+              <div class="content-wrapper">
+                <div class="col-6">
+                    <h2 class="mb-1">Register</h2>
+                    <p>Tunggu apalagi register sekarang</p>
+                    <form action="/register" method="POST" enctype="multipart/form-data">
+                      <div class="mb-3 col-12">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      </div>
+                      <div class="mb-3 col-12">
+                        <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                        <input name="fullname" class="form-control">
+                      </div>
+                       <div class="mb-3 col-12">
+                        <label for="exampleInputEmail1" class="form-label">NPM</label>
+                        <input name="npm" class="form-control">
+                      </div>
+                      <div class="mb-3 col-12">
+                        <label for="tahun"  class="form-label">Tahun ngkatan</label><br>
+                        <input class="form-control" id="tahun" name="tahun">
+                      </div>
+                      <div class="mb-3 col-12">
+                        <label for="prodi"  class="form-label">Program Studi</label><br>
+                        <input class="form-control" id="prodi" name="prodi">
+                        <div id="passwordHelpBlock" class="form-text">
+                        Contoh : D3TI3A
+                        </div>
+                      </div>
+                      <div class="mb-3 col-12">
+                        <label for="exampleInputEmail1" class="form-label">Username</label>
+                        <input name="username" class="form-control" id="inputfullname">
+                      </div>
+                      <div class="mb-3 col-12">
+                        <label for="inputPassword5" class="form-label">Password</label>
+                        <input name="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock" type="password">
+                        <div id="passwordHelpBlock" class="form-text">
+                          Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                        </div>
+                      </div>
+                      <div class="mb-3 col-12">
+                        <label for="ktm"  class="form-label">Upload Kartu Tanda Mahasiswa (KTM)</label><br>
+                        <input type="file" lass="form-control" id="ktm" name="ktm" accept="image/*">
+                      </div>
+                      <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                      </div>
+                      <input type="submit" value="Register" class="btn btn-primary">
+                      <a href="login" type="button" class="btn btn-warning" >Login</a>
+                      <a href="landingpage" type="button" class="btn btn-success">Back</a>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    </main>
+      <sidebar class="base">
+      <section class="base">
+            <!-- Chatbot Icon -->
+          <div class="chat-icon-container">
+              <button class="chat-icon button_base" id="chat-icon" onclick="toggleChat()">💬</button>
+          </div>
+          <!-- Chat Container -->
+          <div class="chat-container" id="chat-container" style="display: none;">
+              <div class="chat-header">
+                  <img src="/img/sawala.jpg" alt="sawala" class="close-icon" onclick="toggleChat()">
+                  <h1>Sawala Bot</h1>
+              </div>
+              <div class="chat-messages" id="chat-messages">
+                  <!-- Chat messages will be displayed here -->
+              </div>
+              <div class="input-container">
+                  <input type="text" id="user-message" placeholder="Type your message...">
+                  <button onclick="sendMessage()" class="button_base">Send</button>
+              </div>
+          </div>
+      </section>
+      </sidebar>   
+      <footer>
+        <div class="footer">
+          <p>Sawala.20223-v.0.0.1</p>
+        </div>
+      </footer>
+      <script src="/script/base.js"></script>
+</body>
+</html>
